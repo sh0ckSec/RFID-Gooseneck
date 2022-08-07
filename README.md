@@ -40,6 +40,7 @@ Ok, let's do this.
 
 ### Step 5 - Fasten Pedestal to Base 
 Last, fasten the pedastal to the wooden base with bolts and wingnuts. Then place the pedastal cover over top to conceal the screws. 
+
 <img src="https://user-images.githubusercontent.com/104524120/183313071-e98d3297-88a1-43da-954a-7ae55be843b5.jpg" width=30% height=30%>
 
 
