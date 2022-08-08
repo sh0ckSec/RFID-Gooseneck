@@ -68,7 +68,7 @@ Below is an example of the wiring guide to connect to a long-range reader with s
 If you would like an alternative cloning device setup, I **HIGHLY RECOMMEND** checking out Alex Dib's RFID Thief Wiegotcha guide: https://scund00r.com/all/rfid/tutorial/2018/07/12/rfid-theif-v2.html 
 
 # Mounting Reader to Pedestal
-Depending on which reader you use you will need to find the correct mounting hole guide for each. You will have to manually drill holes to center it and use the same 6-32 carriage bolts and wingnuts to mount the reader at the top of the gooseneck. Below is an example mount guide for the HID iCLASS R90. 
+Depending onthe reader, you will need to find the correct mounting hole guide for each. You will have to manually drill holes to center it and use the same 6-32 carriage bolts and wingnuts to mount the reader to the gooseneck pedastal. Below is an example mount guide for the HID iCLASS R90. 
 
 <img src="https://user-images.githubusercontent.com/104524120/183313721-397f9938-6629-4a41-a248-e4815d4de5c0.PNG" width=40% height=40%>
 
