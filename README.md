@@ -81,7 +81,7 @@ Depending onthe reader, you will need to find the correct mounting hole guide fo
 
 iCLASS SE Mounting and User Guide: https://fccid.io/JQ6-ICLASSU90/User-Manual/User-Manual-2360366 
 
-HID iClass R90 Goosenect finished look: 
+HID iClass R90 Gooseneck finished look: 
 
 <img src="https://user-images.githubusercontent.com/104524120/183314105-ac8e840d-e4df-4971-92a6-41a3f69e5eaa.jpg" width=40% height=40%>
 
