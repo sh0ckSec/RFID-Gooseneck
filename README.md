@@ -150,7 +150,7 @@ Boom! Happy Hunting!
 
 ![D3FC0N](https://user-images.githubusercontent.com/104524120/183314908-3d3c6d66-29b2-4ba0-84ae-932c3c2ca782.PNG) 
 
-Special Shoutouts to the Bill Graydon of the Physical Bypass Village and Zero_Chaos of the Radio Frequency Village for hosting this talk during DEFCON 30!
+Special Shoutouts to the Bill Graydon of the Physical Security Village and Zero_Chaos of the Radio Frequency Village for hosting this talk during DEFCON 30!
 
 # References
 * Dib, Alex. "RFID Thief v2.0." July 2018, https://scund00r.com/all/rfid/tutorial/2018/07/12/rfid-theif-v2.html
