@@ -63,9 +63,9 @@ Below is an example of the wiring guide to connect to a long-range reader with s
 
 <img src="https://user-images.githubusercontent.com/104524120/183313184-f8f62a73-4bb1-403b-8c65-bfd9d5edac78.PNG" width=80% height=80%>
 
-* Then connect the 12V 5A DC Power Pigtail Barrel Plug Male Connector cable into the Wiegand system (R90 pictured) and trail the cable to the outside of the reader so you can plug it into the 12V 6000mAh DC Battery. 
+* Then connect the 12V 5A DC Power Pigtail Barrel Plug Male Connector cable into the Wiegand system (HID iClass SE R90 pictured) and trail the cable to the outside of the reader so you can plug it into the 12V 6000mAh DC Battery. 
 
-<img src="https://user-images.githubusercontent.com/104524120/183816676-e13ef2d6-b493-4d49-baa1-03c0f9d288a2.jpg width=50% height=50%>
+<img src="https://user-images.githubusercontent.com/104524120/183816676-e13ef2d6-b493-4d49-baa1-03c0f9d288a2.jpg" width=40% height=40%>
 
 
 *Note: For various configurations, check out the official ESP RFID Tool wiring guide here: https://github.com/rfidtool/ESP-RFID-Tool/blob/master/Installation-Schematics/README.md*
@@ -75,7 +75,7 @@ If you would like an alternative raspberry pi cloning device setup, I **HIGHLY R
 http://exfil.co/2017/01/17/wiegotcha-rfid-thief/ 
           
 # Mounting Reader to Pedestal
-Depending onthe reader, you will need to find the correct mounting hole guide for each. You will have to manually drill holes to center it and use the same 6-32 carriage bolts and wingnuts to mount the reader to the gooseneck pedastal. Below is an example mount guide for the HID iCLASS R90. 
+Depending onthe reader, you will need to find the correct mounting hole guide for each. You will have to manually drill holes into the back of the reader in order to center it to the gooseneck pedastal with carriage bolts and nuts. Below is an example mount guide for the HID iCLASS R90.
 
 <img src="https://user-images.githubusercontent.com/104524120/183313721-397f9938-6629-4a41-a248-e4815d4de5c0.PNG" width=40% height=40%>
 
