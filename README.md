@@ -106,13 +106,15 @@ To remain incognito while at the client site, cloning a card via an Android phon
 Once the implant is in place and a few employees have walked past the gooseneck reader, hop onto your phone and log into your the RFID ESP Key SSID to look for loot. The default SSID is "ESP-RFID-Tool" but it is recommended to change the name to something that will blend into the target environment. In order to change the SSID and password protect the ESP RFID Tool wifi (and not leak all your client's credentials to the world), jump over to the configuration page to customize the settings. 
 * Default SSID: **ESP-RFID-Tool**
 * URL: http://192.168.1.1
+
+
 Default credentials to access the configuration page:
 * Username: *admin*
 * Password: *rfidtool*
 
-Full ESP RFID Tool user guide here: https://github.com/rfidtool/ESP-RFID-Tool 
+(Full ESP RFID Tool user guide here: https://github.com/rfidtool/ESP-RFID-Tool)
 
-Access HEX Code Data in the "List Exfiltrated Data" Page:
+Once you're on the ESP RFID Tool WiFi, access HEX Code Data in the "List Exfiltrated Data" Page:
 
 <img src="https://user-images.githubusercontent.com/104524120/183313563-2b3c480d-2005-4bf0-b2db-7d00d182feda.PNG" width=50% height=50%>
 
