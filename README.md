@@ -4,7 +4,7 @@ Traditional RFID badge cloning methods require you to be within 3 feet of your t
 
 <img src="https://user-images.githubusercontent.com/104524120/183311963-9f5dcf63-abc1-46a2-9d27-cc1c80772709.png" width=50% height=50%> 
 
-This is part of a full paper and talk given during **DEFCON 30** in the Physical Bypass Village and Radio Frequency Village titled: **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (YouTube Link Coming Soon). Here's the full build guide for making your own RFID Goosneck Long Range Reader! 
+This is part of a full paper and talk given during **DEFCON 30** in the Physical Bypass Village and Radio Frequency Village titled: **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (https://youtu.be/J6vTovVogq4). Here's the full build guide for making your own RFID Goosneck Long Range Reader! 
 
  *Disclaimer:* **This guide is for educational and ethical hacking purposes ONLY. All penetrtation testing activities must be authorized by all relevant parties.**
 
