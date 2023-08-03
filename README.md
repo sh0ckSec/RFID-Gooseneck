@@ -42,6 +42,8 @@ Ok, let's do this.
 * When the paint is dry, drill the non-slip furniture feet onto the bottom of the base. 
 <img src="https://user-images.githubusercontent.com/104524120/183314771-d5d37a13-9c6e-448e-8eae-d29da818cedc.PNG" width=40% height=40%>
 
+![IMG_8114](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/3c917766-4207-4be9-99af-205409b0b5a0)
+
 
 ### Step 5 - Fasten Pedestal to Base 
 Last, fasten the pedestal to the wooden base with bolts and wingnuts. Then place the pedestal cover over the top to conceal the screws. 
