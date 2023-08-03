@@ -174,6 +174,9 @@ In a few seconds...
 
 Boom! Happy Hunting! 
 
+![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/10bd4244-0146-4b59-b3f5-c6722533796d)
+
+Special Shoutouts to the Bill Graydon of the Physical Security Village for hosting this talk during DEFCON 31!
 
 # OLD METHOD - Cloning Low-Frequency Cards - Android Phone + Proxmark3 Easy 
 **For the sake of documentation I will leave the old method on this page. But finding the exact firmware for the Proxmark3 Easy can be tricky with Proxmark3 Easy and AndProx App - it is highly recommended to use the Flipper Zero in the field for **
