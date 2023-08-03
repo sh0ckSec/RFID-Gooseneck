@@ -1,12 +1,14 @@
 # RFID Gooseneck
 
-Traditional RFID badge cloning methods require you to be within 3 feet of your target, so how can you conduct a socially distanced physical penetration test and clone a badge if you must stay at least 6 feet from a person? Since 2020, companies have increasingly adopted a hybrid work environment, allowing employees to partially work remotely which has decreased the amount of foot traffic in and out of a building at any given time. So after throwing around some ideas I thought, why not create a mobile long-range reader device that we could deploy early in the morning at a client site and let it do all the work for us.  This project guide contains an entry-level hardware design that you can build in a day and deploy in the field in order to increase your chances of remotely cloning an RFID badge. 
+Traditional RFID badge cloning methods require you to be within 3 feet of your target, so how can you conduct a socially distanced physical penetration test and clone a badge if you must stay at least 6 feet from a person? Since 2020, companies have increasingly adopted a hybrid work environment, allowing employees to partially work remotely, which has decreased the amount of foot traffic in and out of a building at any given time. So after throwing around some ideas, I thought, why not create a mobile long-range reader device that we could deploy early in the morning at a client site and let it do all the work for us.  This project guide contains an entry-level hardware design that you can build in a day and deploy in the field in order to increase your chances of remotely cloning an RFID badge. 
 
 <img src="https://user-images.githubusercontent.com/104524120/183311963-9f5dcf63-abc1-46a2-9d27-cc1c80772709.png" width=50% height=50%> 
 
-This is part of a full paper and talk given during **DEFCON 30** in the Physical Bypass Village and Radio Frequency Village titled: **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (https://youtu.be/J6vTovVogq4). Here's the full build guide for making your own RFID Goosneck Long Range Reader! 
+This is part of a full paper and talk given during **DEFCON 30** in the Physical Bypass Village and Radio Frequency Village titled: **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (https://www.youtube.com/watch?v=OLLaXOcuYfw). The content has been updated for **DEFCON 31** with cloning your badge loot with a Flipper Zero.
 
- *Disclaimer:* **This guide is for educational and ethical hacking purposes ONLY. All penetrtation testing activities must be authorized by all relevant parties.**
+Here's the full build guide for making your own RFID Goosneck Long Range Reader! 
+
+ *Disclaimer:* **This guide is for educational and ethical hacking purposes ONLY. All penetration testing activities must be authorized by all relevant parties.**
 
 # Gooseneck Base Installation Guide 
 Ok, let's do this. 
@@ -42,7 +44,7 @@ Ok, let's do this.
 
 
 ### Step 5 - Fasten Pedestal to Base 
-Last, fasten the pedastal to the wooden base with bolts and wingnuts. Then place the pedastal cover over top to conceal the screws. 
+Last, fasten the pedestal to the wooden base with bolts and wingnuts. Then place the pedestal cover over the top to conceal the screws. 
 
 <img src="https://user-images.githubusercontent.com/104524120/183313071-e98d3297-88a1-43da-954a-7ae55be843b5.jpg" width=30% height=30%>
 
@@ -52,14 +54,13 @@ Let's build the long-range reader cloning device.
 ### Long Range Reader BOM: 
 * ESP RFID Tool: https://hackerwarehouse.com/product/esp-rfid-tool/
 * Low-Frequency Long Range Reader (e.g. HID MaxiProx 5375) OR High-Frequency Long Range Reader (e.g. HID iCLASS SE R90) 
-* Breadboard Jumper Wires - 3.9in (10cm): https://a.co/d/fja090p 
-* 22AWG Wire: https://a.co/d/h7bbBom 
+* Breadboard Jumper Wires - 3.9in (10cm): https://a.co/d/fja090p or 22AWG Wire: https://a.co/d/h7bbBom 
 * 18AWG 12V 5A DC Power Pigtail Barrel Plug Connector Cable: https://a.co/d/7l56UFQ
 * 12V 6000mAh/5V 12000mAh DC Battery: https://a.co/d/9czvggQ
 * 3M Dual Lock Clear Velcro: https://a.co/d/gg4SzBd
 
 ### Wiring Guide 
-Below is an example of the wiring guide to connect to a long-range reader with screw-in terminals using the ESP RFID Tool. Use the color coded male-to-male breadboard wires to connect the two terminal interfaces between the Wiegand system and the ESP RFID Tool as seen below.
+Below is an example of the wiring guide to connect to a long-range reader with screw-in terminals using the ESP RFID Tool. Use the color-coded male-to-male breadboard wires to connect the two terminal interfaces between the Wiegand system and the ESP RFID Tool as seen below.
 
 <img src="https://user-images.githubusercontent.com/104524120/183313184-f8f62a73-4bb1-403b-8c65-bfd9d5edac78.PNG" width=80% height=80%>
 
@@ -67,6 +68,20 @@ Below is an example of the wiring guide to connect to a long-range reader with s
 
 <img src="https://user-images.githubusercontent.com/104524120/183816676-e13ef2d6-b493-4d49-baa1-03c0f9d288a2.jpg" width=40% height=40%>
 
+The same wiring applies to the low-frequency HID MaxiProx 5375 reader. 
+
+**INSERT PIC OF 5375 WIRING**
+
+*WARNING:* Ensure when you are working with the HID MaxiProx 5375 that you change the jumper on the Shunt Pins settings from 2 and 3 +21-2.85 VDC (Default) TO Shunt Pins 1 and 2 +11.6-20.9VDC) because we are using a 12V battery. If you do not switch the jumper, you will fry the unit! YOU'VE BEEN WARNED! Double-check this for any reader you are working with, just in case. 
+
+**INSERT JUMPER SETTINGS PIC HERE**
+
+To remain as stealthy as possible, it is advised to turn off the audible "beep" if the reader allows you to. In this case, we can silence the beep on the HID MaxiProx 5375 reader by pushing down dipswitch #4 of SW1 (the farthest right of the switch sets). 
+
+<img src="(https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/a1cb567d-821a-4a09-8444-d661cca4b558)" width=40% height=40%>
+*Source: http://exfil.co/2017/01/17/wiegotcha-rfid-thief/*
+
+HID MaxiProx 5375 full manual: https://www.manualsdir.com/manuals/433070/hid-maxiprox-installation-guide.html?page=7 
 
 *Note: For various configurations, check out the official ESP RFID Tool wiring guide here: https://github.com/rfidtool/ESP-RFID-Tool/blob/master/Installation-Schematics/README.md*
 
@@ -75,7 +90,7 @@ If you would like an alternative raspberry pi cloning device setup, I **HIGHLY R
 http://exfil.co/2017/01/17/wiegotcha-rfid-thief/ 
           
 # Mounting Reader to Pedestal
-Depending onthe reader, you will need to find the correct mounting hole guide for each. You will have to manually drill holes into the back of the reader in order to center it to the gooseneck pedastal with carriage bolts and nuts. Below is an example mount guide for the HID iCLASS R90.
+Depending on the reader, you must find the correct mounting hole guide for each. You will have to manually drill holes into the back of the reader in order to center it to the gooseneck pedestal with carriage bolts and nuts. Below is an example mount guide for the HID iCLASS R90.
 
 <img src="https://user-images.githubusercontent.com/104524120/183313721-397f9938-6629-4a41-a248-e4815d4de5c0.PNG" width=40% height=40%>
 
@@ -86,8 +101,8 @@ HID iClass R90 Gooseneck finished look:
 <img src="https://user-images.githubusercontent.com/104524120/183314105-ac8e840d-e4df-4971-92a6-41a3f69e5eaa.jpg" width=40% height=40%>
 
 
-# Cloning Low Frequency Cards - Android Phone + Proxmark3 Easy 
-To remain incognito while at the client site, cloning a card via an Android phone will keep the lowest profile rather than fidling with a laptop when you need to copy the card data. 
+# Cloning Low-Frequency Cards - Android Phone + Proxmark3 Easy 
+To remain incognito while at the client site, cloning a card via an Android phone will keep the lowest profile rather than fiddling with a laptop when you need to copy the card data. 
 
 <img src="https://user-images.githubusercontent.com/104524120/183313587-635d6993-c76d-49c7-9b92-a2122933511a.PNG" width=40% height=40%>
 
@@ -130,7 +145,7 @@ Once you're on the ESP RFID Tool WiFi, access HEX Code Data in the "List Exfiltr
 * Begin sending commands!
 
 ### Step 3 - AndProx Commands 
-Once your Proxmark3 Easy is connected copy your Hex Code and enter these commands: 
+Once your Proxmark3 Easy is connected, copy your Hex Code and enter these commands: 
 
 <img src="https://user-images.githubusercontent.com/104524120/183313638-804a3cc5-ddee-48dc-ab06-ab20b3baef0d.PNG" width=50% height=50%>
 
