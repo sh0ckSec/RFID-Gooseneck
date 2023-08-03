@@ -1,12 +1,12 @@
 # RFID Gooseneck
 
-Traditional RFID badge cloning methods require you to be within 3 feet of your target, so how can you conduct a socially distanced physical penetration test and clone a badge if you must stay at least 6 feet from a person? Since 2020, companies have increasingly adopted a hybrid work environment, allowing employees to partially work remotely, which has decreased the amount of foot traffic in and out of a building at any given time. So after throwing around some ideas, I thought, why not create a mobile long-range reader device that we could deploy early in the morning at a client site and let it do all the work for us.  This project guide contains an entry-level hardware design that you can build in a day and deploy in the field in order to increase your chances of remotely cloning an RFID badge. 
+Traditional RFID badge cloning methods require you to be within 3 feet of your target, so how can you conduct a socially distanced physical penetration test and clone a badge if you must stay at least 6 feet from a person? Since 2020, companies have increasingly adopted a hybrid work environment, allowing employees to partially work remotely, which has decreased the amount of foot traffic in and out of a building at any given time. After throwing around some ideas, I thought, why not create a mobile long-range reader device that we could deploy early in the morning at a client site and let it do all the work for us.  This project guide contains an entry-level hardware design that you can build in a day and deploy in the field in order to increase your chances of remotely cloning an RFID badge. 
 
 <img src="https://user-images.githubusercontent.com/104524120/183311963-9f5dcf63-abc1-46a2-9d27-cc1c80772709.png" width=50% height=50%> 
 
 This is part of a full paper and talk given during **DEFCON 30** in the Physical Bypass Village and Radio Frequency Village titled: **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (https://www.youtube.com/watch?v=OLLaXOcuYfw). 
 
-The content has been updated for **DEFCON 31** titled: **Flipping Locks: Remote Badge Cloning with the Flipper Zero**. In this tutorial, you'll learn how to clone the badge loot from your RFID Gooseneck reader quick and easy!
+The content has been updated for **DEFCON 31** titled: **Flipping Locks: Remote Badge Cloning with the Flipper Zero**. In this tutorial, you'll learn how to clone the badge loot from your RFID Gooseneck reader quickly and easily!
 
 Here's the full build guide for making your own RFID Goosneck Long Range Reader! 
 
@@ -58,14 +58,14 @@ Last, fasten the pedestal to the wooden base with bolts and wingnuts. Then place
 Let's build the long-range reader cloning device. 
 ### Long Range Reader BOM: 
 * ESP RFID Tool: https://hackerwarehouse.com/product/esp-rfid-tool/
-* Low-Frequency Long Range Reader (e.g. HID MaxiProx 5375) OR High-Frequency Long Range Reader (e.g. HID iCLASS SE R90) 
+* Low-Frequency Long Range Reader (e.g., HID MaxiProx 5375) OR High-Frequency Long Range Reader (e.g., HID iCLASS SE R90) 
 * Breadboard Jumper Wires - 3.9in (10cm): https://a.co/d/fja090p or 22AWG Wire: https://a.co/d/h7bbBom 
 * 18AWG 12V 5A DC Power Pigtail Barrel Plug Connector Cable: https://a.co/d/7l56UFQ
 * 12V 6000mAh/5V 12000mAh DC Battery: https://a.co/d/9czvggQ
 * 3M Dual Lock Clear Velcro: https://a.co/d/gg4SzBd
 
 ### Wiring Guide 
-Below is an example of the wiring guide to connect to a long-range reader with screw-in terminals using the ESP RFID Tool. Use the color-coded male-to-male breadboard wires to connect the two terminal interfaces between the Wiegand system and the ESP RFID Tool as seen below.
+Below is an example of the wiring guide to connect to a long-range reader with screw-in terminals using the ESP RFID Tool. Use the color-coded male-to-male breadboard wires to connect the two terminal interfaces between the Wiegand system and the ESP RFID Tool, as seen below.
 
 <img src="https://user-images.githubusercontent.com/104524120/183313184-f8f62a73-4bb1-403b-8c65-bfd9d5edac78.PNG" width=80% height=80%>
 
@@ -77,7 +77,7 @@ The same wiring applies to the low-frequency HID MaxiProx 5375 reader.
 
 <img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/1093738d-37ee-41df-a2d2-f16fe91940dd" width=40% height=40%>
 
-Close up of HID MaxiProx 5375 Wiring:
+Close-up of HID MaxiProx 5375 Wiring:
 
 <img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/b3ee2581-b815-4f37-a525-e5853a5ddace" width=40% height=40%>
 
@@ -137,7 +137,7 @@ To remain incognito while at the client site, cloning a card with a mobile phone
 
 
 ### Step 1  - Access RFID Loot
-Once the implant is in place and a few employees have walked past the gooseneck reader, hop onto your phone and log into your the RFID ESP Key SSID to look for loot. The default SSID is "ESP-RFID-Tool" but it is recommended to change the name to something that will blend into the target environment. In order to change the SSID and password protect the ESP RFID Tool wifi (and not leak all your client's credentials to the world), jump over to the configuration page to customize the settings and change all your default passwords. 
+Once the implant is in place and a few employees have walked past the gooseneck reader, hop onto your phone and log into your RFID ESP Key SSID to look for loot. The default SSID is "ESP-RFID-Tool" but it is recommended to change the name to something that will blend into the target environment. In order to change the SSID and password to protect the ESP RFID Tool wifi (and not leak all your client's credentials to the world), jump over to the configuration page to customize the settings and change all your default passwords. 
 * Default SSID: **ESP-RFID-Tool**
 * URL: http://192.168.1.1
 
@@ -160,7 +160,7 @@ Copy the second half of the binary data: ​
 REMOVE the leading and trailing parity bits:
 * ​000111110000010100111001
 
-Take this and convert into HEX using a Bin-HEX Converter ​on your phone:
+Take this and convert it into HEX using a Bin-HEX Converter ​on your phone:
 * 000111110000010100111001 = 1F 05 39​
 
 
@@ -194,7 +194,7 @@ Boom! Happy Hunting!
 Special Shoutouts to the Bill Graydon of the Physical Security Village for hosting this talk during DEFCON 31!
 
 # OLD METHOD - Cloning Low-Frequency Cards - Android Phone + Proxmark3 Easy 
-**For the sake of documentation I will leave the old method on this page. But finding the exact firmware for the Proxmark3 Easy can be tricky with now, unsupported AndProx App - it is highly recommended to use the Flipper Zero in the field for the easiest approach.**
+**For the sake of documentation, I will leave the old method on this page. But finding the exact firmware for the Proxmark3 Easy can be tricky with now, unsupported AndProx App - it is highly recommended to use the Flipper Zero in the field for the easiest approach.**
 
 To remain incognito while at the client site, cloning a card via an Android phone will keep the lowest profile rather than fiddling with a laptop when you need to copy the card data. 
 
@@ -212,7 +212,7 @@ To remain incognito while at the client site, cloning a card via an Android phon
                                                                                                           
 
 ### Step 1A  - Access RFID Loot
-Once the implant is in place and a few employees have walked past the gooseneck reader, hop onto your phone and log into your the RFID ESP Key SSID to look for loot. The default SSID is "ESP-RFID-Tool" but it is recommended to change the name to something that will blend into the target environment. In order to change the SSID and password protect the ESP RFID Tool wifi (and not leak all your client's credentials to the world), jump over to the configuration page to customize the settings and change all your default passwords. 
+Once the implant is in place and a few employees have walked past the gooseneck reader, hop onto your phone and log into your RFID ESP Key SSID to look for loot. The default SSID is "ESP-RFID-Tool" but it is recommended to change the name to something that will blend into the target environment. In order to change the SSID and password to protect the ESP RFID Tool wifi (and not leak all your client's credentials to the world), jump over to the configuration page to customize the settings and change all your default passwords. 
 * Default SSID: **ESP-RFID-Tool**
 * URL: http://192.168.1.1
 
@@ -260,6 +260,8 @@ Boom! Happy Hunting!
 ![D3FC0N](https://user-images.githubusercontent.com/104524120/183314908-3d3c6d66-29b2-4ba0-84ae-932c3c2ca782.PNG) 
 
 Special Shoutouts to the Bill Graydon of the Physical Security Village and Zero_Chaos of the Radio Frequency Village for hosting this talk during DEFCON 30!
+
+<a href="https://www.buymeacoffee.com/sh0cksec" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 # References
 * Dib, Alex. "RFID Thief v2.0." July 2018, https://scund00r.com/all/rfid/tutorial/2018/07/12/rfid-theif-v2.html
