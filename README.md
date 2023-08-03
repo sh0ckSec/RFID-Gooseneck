@@ -4,7 +4,9 @@ Traditional RFID badge cloning methods require you to be within 3 feet of your t
 
 <img src="https://user-images.githubusercontent.com/104524120/183311963-9f5dcf63-abc1-46a2-9d27-cc1c80772709.png" width=50% height=50%> 
 
-This is part of a full paper and talk given during **DEFCON 30** in the Physical Bypass Village and Radio Frequency Village titled: **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (https://www.youtube.com/watch?v=OLLaXOcuYfw). The content has been updated for **DEFCON 31** with cloning your badge loot with a Flipper Zero.
+This is part of a full paper and talk given during **DEFCON 30** in the Physical Bypass Village and Radio Frequency Village titled: **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (https://www.youtube.com/watch?v=OLLaXOcuYfw). 
+
+The content has been updated for **DEFCON 31** titled: **Flipping Locks: Remote Badge Cloning with the Flipper Zero**. In this tutorial, you'll learn how to clone the badge loot from your RFID Gooseneck reader quick and easy!
 
 Here's the full build guide for making your own RFID Goosneck Long Range Reader! 
 
@@ -42,13 +44,14 @@ Ok, let's do this.
 * When the paint is dry, drill the non-slip furniture feet onto the bottom of the base. 
 <img src="https://user-images.githubusercontent.com/104524120/183314771-d5d37a13-9c6e-448e-8eae-d29da818cedc.PNG" width=40% height=40%>
 
-<img src="![IMG_8114](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/3c917766-4207-4be9-99af-205409b0b5a0)" width=40% height=40%>
+<img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/3c917766-4207-4be9-99af-205409b0b5a0" width=30% height=30%>
 
 
 ### Step 5 - Fasten Pedestal to Base 
 Last, fasten the pedestal to the wooden base with bolts and wingnuts. Then place the pedestal cover over the top to conceal the screws. 
 
 <img src="https://user-images.githubusercontent.com/104524120/183313071-e98d3297-88a1-43da-954a-7ae55be843b5.jpg" width=30% height=30%>
+<img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/a572f8ec-7aba-4e21-b53a-0f709954f2e8" width=40% height=40%>
 
 
 # Long Range Reader Cloning Guide
@@ -72,18 +75,22 @@ Below is an example of the wiring guide to connect to a long-range reader with s
 
 The same wiring applies to the low-frequency HID MaxiProx 5375 reader. 
 
-**INSERT PIC OF 5375 WIRING**
+<img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/1093738d-37ee-41df-a2d2-f16fe91940dd" width=40% height=40%>
+
+Close up of HID MaxiProx 5375 Wiring:
+
+<img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/b3ee2581-b815-4f37-a525-e5853a5ddace" width=40% height=40%>
 
 *WARNING:* Ensure when you are working with the HID MaxiProx 5375 that you change the jumper on the Shunt Pins settings from 2 and 3 +21-2.85 VDC (Default) TO Shunt Pins 1 and 2 +11.6-20.9VDC) because we are using a 12V battery. If you do not switch the jumper, you will fry the unit! YOU'VE BEEN WARNED! Double-check this for any reader you are working with, just in case. 
 
-**INSERT JUMPER SETTINGS PIC HERE**
+<img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/b41eb1ec-1524-4aae-b135-6da0f19b80b5" width=40% height=40%>
 
 To remain as stealthy as possible, it is advised to turn off the audible "beep" if the reader allows you to. In this case, we can silence the beep on the HID MaxiProx 5375 reader by pushing down dipswitch #4 of SW1 (the farthest right of the switch sets). 
 
-<img src="(https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/a1cb567d-821a-4a09-8444-d661cca4b558)" width=40% height=40%>
-*Source: http://exfil.co/2017/01/17/wiegotcha-rfid-thief/*
+<img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/a1cb567d-821a-4a09-8444-d661cca4b558" width=40% height=40%>
 
-HID MaxiProx 5375 full manual: https://www.manualsdir.com/manuals/433070/hid-maxiprox-installation-guide.html?page=7 
+*Image Source: http://exfil.co/2017/01/17/wiegotcha-rfid-thief/*
+
 
 *Note: For various configurations, check out the official ESP RFID Tool wiring guide here: https://github.com/rfidtool/ESP-RFID-Tool/blob/master/Installation-Schematics/README.md*
 
@@ -102,8 +109,75 @@ HID iClass R90 Gooseneck finished look:
 
 <img src="https://user-images.githubusercontent.com/104524120/183314105-ac8e840d-e4df-4971-92a6-41a3f69e5eaa.jpg" width=40% height=40%>
 
+# NEW (UPDATED) - Cloning Low-Frequency Cards - Mobile Phone + Flipper Zero
+To remain incognito while at the client site, cloning a card with a mobile phone and a Flipper Zero hidden away will keep the lowest profile rather than fiddling with a laptop when you need to copy the card data. 
 
-# Cloning Low-Frequency Cards - Android Phone + Proxmark3 Easy 
+### Mobile Cloning Gear:
+* Mobile Phone (Android or iOS)
+* Flipper Zero: https://shop.flipperzero.one/
+* Flipper Mobile App: https://docs.flipper.net/mobile-app 
+* RFID T5557 Rewritable Cards: https://a.co/d/0NF2zJG
+
+<img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/c7e42376-441a-4686-9f8f-f9d90d8ce25a" width=40% height=40%>
+
+
+### Step 1  - Access RFID Loot
+Once the implant is in place and a few employees have walked past the gooseneck reader, hop onto your phone and log into your the RFID ESP Key SSID to look for loot. The default SSID is "ESP-RFID-Tool" but it is recommended to change the name to something that will blend into the target environment. In order to change the SSID and password protect the ESP RFID Tool wifi (and not leak all your client's credentials to the world), jump over to the configuration page to customize the settings and change all your default passwords. 
+* Default SSID: **ESP-RFID-Tool**
+* URL: http://192.168.1.1
+
+
+Default credentials to access the configuration page:
+* Username: *admin*
+* Password: *rfidtool*
+
+(Full ESP RFID Tool user guide here: https://github.com/rfidtool/ESP-RFID-Tool)
+
+Once you're on the ESP RFID Tool WiFi, access Data in the "List Exfiltrated Data" Page:
+<img src="https://user-images.githubusercontent.com/104524120/183313563-2b3c480d-2005-4bf0-b2db-7d00d182feda.PNG" width=50% height=50%>
+
+### Step 2 - Copy the 2nd half of the Binary Payload and Convert to HEX
+<img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/6aaf73ea-d200-47b5-8242-17cf173fc577" width=70% height=70%>
+
+Copy the second half of the binary data: ​
+* 10001111100000101001110011 ​
+  
+REMOVE the leading and trailing parity bits:
+* ​000111110000010100111001
+
+Take this and convert into HEX using a Bin-HEX Converter ​on your phone:
+* 000111110000010100111001 = 1F 05 39​
+
+
+### Step 3 - Save your Card Data to the Flipper Zero
+
+On your Flipper, **hit the center button** and navigate to > **125 hHz RFID** > **Add Manually**
+![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/eff63263-fe18-485b-a2b1-a9dfd9aae3d1)
+
+
+Then **Select HID H10301** > Enter the Data: **1F0539**
+![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/f0e99f77-550a-4f46-8129-873e9e2936d1)
+
+
+Select **Save** > **Name the card** (Enter the desired name)
+![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/dc884af4-b73d-46e0-a134-7df90a78c0ba)
+
+Select your saved card > **Info** (in order to look for your FC (Facility Code) and Card Number)
+![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/08c9bf3c-a1bd-4589-af60-507343440057)
+
+
+### Step 4- Clone your Card!
+Select your saved card > **Write** it to a blank T5557 card
+![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/bcdb096d-5250-4aa4-a2e7-81d8c48bd673)
+In a few seconds...
+![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/4a5bbf07-f7ab-455d-a98f-4fbc6c45aa8c)
+
+Boom! Happy Hunting! 
+
+
+# OLD METHOD - Cloning Low-Frequency Cards - Android Phone + Proxmark3 Easy 
+**For the sake of documentation I will leave the old method on this page. But finding the exact firmware for the Proxmark3 Easy can be tricky with Proxmark3 Easy and AndProx App - it is highly recommended to use the Flipper Zero in the field for **
+
 To remain incognito while at the client site, cloning a card via an Android phone will keep the lowest profile rather than fiddling with a laptop when you need to copy the card data. 
 
 <img src="https://user-images.githubusercontent.com/104524120/183313587-635d6993-c76d-49c7-9b92-a2122933511a.PNG" width=40% height=40%>
@@ -120,7 +194,7 @@ To remain incognito while at the client site, cloning a card via an Android phon
                                                                                                           
 
 ### Step 1A  - Access RFID Loot
-Once the implant is in place and a few employees have walked past the gooseneck reader, hop onto your phone and log into your the RFID ESP Key SSID to look for loot. The default SSID is "ESP-RFID-Tool" but it is recommended to change the name to something that will blend into the target environment. In order to change the SSID and password protect the ESP RFID Tool wifi (and not leak all your client's credentials to the world), jump over to the configuration page to customize the settings. 
+Once the implant is in place and a few employees have walked past the gooseneck reader, hop onto your phone and log into your the RFID ESP Key SSID to look for loot. The default SSID is "ESP-RFID-Tool" but it is recommended to change the name to something that will blend into the target environment. In order to change the SSID and password protect the ESP RFID Tool wifi (and not leak all your client's credentials to the world), jump over to the configuration page to customize the settings and change all your default passwords. 
 * Default SSID: **ESP-RFID-Tool**
 * URL: http://192.168.1.1
 
