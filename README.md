@@ -97,6 +97,21 @@ To remain as stealthy as possible, it is advised to turn off the audible "beep" 
 ### ALTERNATIVE Raspberry Pi Setup: 
 If you would like an alternative raspberry pi cloning device setup, I **HIGHLY RECOMMEND** checking out Mike Kelly's (Twitter @lixmk) Wiegotcha – RFID Thief guide: 
 http://exfil.co/2017/01/17/wiegotcha-rfid-thief/ 
+
+# Battery Mounting
+Once you have wired everything, take 3M Dual Lock Velcro and affix it to the back of the battery and the back of the reader. This will ensure the battery will stay firm throughout the engagement and it looks like it is part of the unit. 
+
+HID MaxiProx 5375
+
+<img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/b8f3ed3f-412c-4578-aa44-349defcdae07" width=40% height=40%>
+
+HID R90 
+
+<img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/f1c144d7-388c-406d-90e7-b537d8885114" width=40% height=40%>
+
+HID R90 
+
+<img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/dff98303-762d-467b-a10d-4417b1a18d12" width=40% height=40%>
           
 # Mounting Reader to Pedestal
 Depending on the reader, you must find the correct mounting hole guide for each. You will have to manually drill holes into the back of the reader in order to center it to the gooseneck pedestal with carriage bolts and nuts. Below is an example mount guide for the HID iCLASS R90.
