@@ -4,13 +4,17 @@ Traditional RFID badge cloning methods require you to be within 3 feet of your t
 
 <img src="https://user-images.githubusercontent.com/104524120/183311963-9f5dcf63-abc1-46a2-9d27-cc1c80772709.png" width=50% height=50%> 
 
-This is part of a full paper and talk given during **DEFCON 30** in the Physical Bypass Village and Radio Frequency Village titled: **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (https://www.youtube.com/watch?v=OLLaXOcuYfw). 
+This is part of a full paper and talk given during **DEFCON 30,31 and 32** in the Physical Bypass Village **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (https://www.youtube.com/watch?v=OLLaXOcuYfw). Each year the content is reiterated and improved upon, staying up on the latest techniques and gadgets to use in the field. The goal is to conduct a physical pen test without the need for a laptop, only a mobile phone and implant devices!
 
-The content has been updated for **DEFCON 31** titled: **Flipping Locks: Remote Badge Cloning with the Flipper Zero**. In this tutorial, you'll learn how to clone the badge loot from your RFID Gooseneck reader quickly and easily!
+![DC32](https://github.com/user-attachments/assets/8d56f4a6-3123-49d1-a24a-8314c1fa08e6)
 
-Here's the full build guide for making your own RFID Goosneck Long Range Reader! 
+The content has been updated for **DEFCON 32** titled: **Flipping Locks (The Remix): Remote Badge Cloning with the Flipper Zero and More**. In this tutorial, you'll learn how to clone the badge loot from your RFID Gooseneck reader quickly and easily!
+
+#### NOTE: iCLASS SE/SEOS Downgrade Attack and Legacy Attack Methods are updated in the latest slide deck from DEF CON 32 (2024) - download the .pdf to review the attack methods.
 
  *Disclaimer:* **This guide is for educational and ethical hacking purposes ONLY. All penetration testing activities must be authorized by all relevant parties.**
+
+### Here's the full build guide for making your own RFID Goosneck Long Range Reader! 
 
 # Gooseneck Base Installation Guide 
 Ok, let's do this. 
@@ -189,9 +193,8 @@ In a few seconds...
 
 Boom! Happy Hunting! 
 
+![DC32](https://github.com/user-attachments/assets/8d56f4a6-3123-49d1-a24a-8314c1fa08e6)
 ![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/10bd4244-0146-4b59-b3f5-c6722533796d)
-
-Special Shoutouts to the Bill Graydon of the Physical Security Village for hosting this talk during DEFCON 31!
 
 # OLD METHOD - Cloning Low-Frequency Cards - Android Phone + Proxmark3 Easy 
 **For the sake of documentation, I will leave the old method on this page. But finding the exact firmware for the Proxmark3 Easy can be tricky with now, unsupported AndProx App - it is highly recommended to use the Flipper Zero in the field for the easiest approach.**
@@ -256,10 +259,9 @@ Verify your card data:
 
 Boom! Happy Hunting!
 
-
 ![D3FC0N](https://user-images.githubusercontent.com/104524120/183314908-3d3c6d66-29b2-4ba0-84ae-932c3c2ca782.PNG) 
 
-Special Shoutouts to the Bill Graydon of the Physical Security Village and Zero_Chaos of the Radio Frequency Village for hosting this talk during DEFCON 30!
+Special Shoutouts to the Bill Graydon,Terry, Karen and the team of the Physical Security Village and Zero_Chaos of the Radio Frequency Village for hosting us at DEFCON!
 
 <a href="https://www.buymeacoffee.com/sh0cksec" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
