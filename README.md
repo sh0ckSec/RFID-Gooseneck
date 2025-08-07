@@ -4,13 +4,15 @@ Traditional RFID badge cloning methods require you to be within 3 feet of your t
 
 <img src="https://user-images.githubusercontent.com/104524120/183311963-9f5dcf63-abc1-46a2-9d27-cc1c80772709.png" width=50% height=50%> 
 
-This is part of a full paper and talk given during **DEFCON 30,31 and 32** in the Physical Bypass Village **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (https://www.youtube.com/watch?v=OLLaXOcuYfw). Each year the content is reiterated and improved upon, staying up on the latest techniques and gadgets to use in the field. The goal is to conduct a physical pen test without the need for a laptop, only a mobile phone and implant devices!
+This is part of an original full paper and talk given during **DEFCON 30** in the Physical Bypass Village **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (https://www.youtube.com/watch?v=OLLaXOcuYfw). Each year (DEFCON 31, 32 and 33), the content is reiterated and improved upon, staying up on the latest techniques and gadgets to use in the field. The goal is to conduct a physical pen test without the need for a laptop, only a mobile phone and implant devices!
 
-![DC32](https://github.com/user-attachments/assets/8d56f4a6-3123-49d1-a24a-8314c1fa08e6)
 
-The content has been updated for **DEFCON 32** titled: **Flipping Locks (The Remix): Remote Badge Cloning with the Flipper Zero and More**. In this tutorial, you'll learn how to clone the badge loot from your RFID Gooseneck reader quickly and easily!
 
-#### NOTE: iCLASS SE/SEOS Downgrade Attack and Legacy Attack Methods are updated in the latest slide deck from DEF CON 32 (2024) - download the .pdf to review the attack methods.
+The content has been updated for **DEFCON 33** titled: **Flipping Locks: Remote Badge Cloning with the Flipper Zero and More**. In this tutorial, you'll learn how to clone the badge loot from your RFID Gooseneck reader quickly and easily!
+
+<img width=20% height=20% alt="image" src="https://github.com/user-attachments/assets/8ac8bc0b-6389-4662-ad1e-db043406d98c" />
+
+#### NOTE: iCLASS SE/SEOS Downgrade Attack and Legacy Attack Methods are updated in the latest slide deck from DEF CON 33 (2025) - download the .pdf to review the attack methods.
 
  *Disclaimer:* **This guide is for educational and ethical hacking purposes ONLY. All penetration testing activities must be authorized by all relevant parties.**
 
@@ -99,7 +101,7 @@ To remain as stealthy as possible, it is advised to turn off the audible "beep" 
 *Note: For various configurations, check out the official ESP RFID Tool wiring guide here: https://github.com/rfidtool/ESP-RFID-Tool/blob/master/Installation-Schematics/README.md*
 
 ### ALTERNATIVE Raspberry Pi Setup: 
-If you would like an alternative raspberry pi cloning device setup, I **HIGHLY RECOMMEND** checking out Mike Kelly's (Twitter @lixmk) Wiegotcha – RFID Thief guide: 
+If you would like an alternative Raspberry Pi cloning device setup, I **HIGHLY RECOMMEND** checking out Mike Kelly's (Twitter @lixmk) Wiegotcha – RFID Thief guide: 
 http://exfil.co/2017/01/17/wiegotcha-rfid-thief/ 
 
 # Battery Mounting
@@ -128,7 +130,7 @@ HID iClass R90 Gooseneck finished look:
 
 <img src="https://user-images.githubusercontent.com/104524120/183314105-ac8e840d-e4df-4971-92a6-41a3f69e5eaa.jpg" width=40% height=40%>
 
-# NEW (UPDATED) - Cloning Low-Frequency Cards - Mobile Phone + Flipper Zero
+# Flipper Zero - Cloning Low-Frequency Cards 
 To remain incognito while at the client site, cloning a card with a mobile phone and a Flipper Zero hidden away will keep the lowest profile rather than fiddling with a laptop when you need to copy the card data. 
 
 ### Mobile Cloning Gear:
@@ -155,17 +157,25 @@ Default credentials to access the configuration page:
 Once you're on the ESP RFID Tool WiFi, access Data in the "List Exfiltrated Data" Page:
 <img src="https://user-images.githubusercontent.com/104524120/183313563-2b3c480d-2005-4bf0-b2db-7d00d182feda.PNG" width=50% height=50%>
 
+#### Note: Binary Code Breakdown 
+It's not as crazy as you think, here's the breakdown of what the binary code means below:
+<img width=70% height=70% alt="image" src="https://github.com/user-attachments/assets/015e5edc-cfad-42e9-a304-2f75f65fdd03" />
+Source:  https://accessgrid.com/guides/access-control-protocols/examples-of-every-access-control-bit-format 
+
 ### Step 2 - Copy the 2nd half of the Binary Payload and Convert to HEX
-<img src="https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/6aaf73ea-d200-47b5-8242-17cf173fc577" width=70% height=70%>
+The "HEX" in the loot file was designed for a Proxmark 3 device. The Flipper Zero takes a different type of hex code so here's how you get your payload to clone your card. 
+
+<img width=70% height=70% alt="image" src="https://github.com/user-attachments/assets/5565aa65-4b93-4744-8b95-2fa29dea3a33" />
+
 
 Copy the second half of the binary data: ​
-* 10001111100000101001110011 ​
+* 00010000100000101001110011 ​
   
 REMOVE the leading and trailing parity bits:
-* ​000111110000010100111001
+* 001000010000010100111001
 
-Take this and convert it into HEX using a Bin-HEX Converter ​on your phone:
-* 000111110000010100111001 = 1F 05 39​
+Copy this and convert it into HEX using a Bin-HEX Converter ​on your phone and poof! You have the 6 digit hex code for your Flipper!
+* 001000010000010100111001 = 21 05 39​
 
 
 ### Step 3 - Save your Card Data to the Flipper Zero
@@ -174,30 +184,40 @@ On your Flipper, **hit the center button** and navigate to > **125 hHz RFID** > 
 ![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/eff63263-fe18-485b-a2b1-a9dfd9aae3d1)
 
 
-Then **Select HID H10301** > Enter the Data: **1F0539**
-![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/f0e99f77-550a-4f46-8129-873e9e2936d1)
+Then **Select HID H10301** > Enter the Data: **210539**
+<img width=100% height=100% alt="image" src="https://github.com/user-attachments/assets/0e653e6e-8b92-4cfa-813b-0fd232679d16" />
+
 
 
 Select **Save** > **Name the card** (Enter the desired name)
-![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/dc884af4-b73d-46e0-a134-7df90a78c0ba)
+<img width=100% height=100% alt="image" src="https://github.com/user-attachments/assets/4041ce28-f4d0-4abd-8ade-a2dd9e177d8d" />
+
 
 Select your saved card > **Info** (in order to look for your FC (Facility Code) and Card Number)
-![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/08c9bf3c-a1bd-4589-af60-507343440057)
+<img width=100% height=100% alt="image" src="https://github.com/user-attachments/assets/877b06b4-5fc9-4b41-9489-9920ef24b454" />
+
 
 
 ### Step 4- Clone your Card!
 Select your saved card > **Write** it to a blank T5557 card
-![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/bcdb096d-5250-4aa4-a2e7-81d8c48bd673)
+<img width=100% height=100% alt="image" src="https://github.com/user-attachments/assets/51a069ef-5677-4d2c-90b0-c3e7a35615e3" />
+
 In a few seconds...
-![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/4a5bbf07-f7ab-455d-a98f-4fbc6c45aa8c)
+<img width=100% height=100% alt="image" src="https://github.com/user-attachments/assets/0bf89c44-f6bb-4a20-add9-b1e3fc6504b1" />
+
 
 Boom! Happy Hunting! 
-
+<p float="left">
+          <img src="https://github.com/user-attachments/assets/45b9e293-9ed4-4293-987f-37d882e52a54" width=20% height=20%>
+          
 ![DC32](https://github.com/user-attachments/assets/8d56f4a6-3123-49d1-a24a-8314c1fa08e6)
-![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/10bd4244-0146-4b59-b3f5-c6722533796d)
+
+![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/10bd4244-0146-4b59-b3f5-c6722533796d) 
+
+</p>
 
 # OLD METHOD - Cloning Low-Frequency Cards - Android Phone + Proxmark3 Easy 
-**For the sake of documentation, I will leave the old method on this page. But finding the exact firmware for the Proxmark3 Easy can be tricky with now, unsupported AndProx App - it is highly recommended to use the Flipper Zero in the field for the easiest approach.**
+**For the sake of documentation, I will leave the old method on this page. But finding the exact firmware for the Proxmark3 Easy can be tricky now, as the AndProx App is unsupported - it is highly recommended to use the Flipper Zero in the field for the easiest approach.**
 
 To remain incognito while at the client site, cloning a card via an Android phone will keep the lowest profile rather than fiddling with a laptop when you need to copy the card data. 
 
@@ -261,16 +281,18 @@ Boom! Happy Hunting!
 
 ![D3FC0N](https://user-images.githubusercontent.com/104524120/183314908-3d3c6d66-29b2-4ba0-84ae-932c3c2ca782.PNG) 
 
-Special Shoutouts to the Bill Graydon,Terry, Karen and the team of the Physical Security Village and Zero_Chaos of the Radio Frequency Village for hosting us at DEFCON!
+Special Shoutouts to the Bill Graydon, Terry, Karen and the team of the Physical Security Village and Zero_Chaos of the Radio Frequency Village for hosting us at DEFCON!
 
 <a href="https://www.buymeacoffee.com/sh0cksec" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 # References
-* Dib, Alex. "RFID Thief v2.0." July 2018, https://scund00r.com/all/rfid/tutorial/2018/07/12/rfid-theif-v2.html
+
+* Bunsen, Auston. "Examples of every access control bit format." February 2025, https://accessgrid.com/guides/access-control-protocols/examples-of-every-access-control-bit-format 
 * Farrell, Michael and Boris Hajduk. "AndProx." July 2021, GitHub, https://github.com/AndProx/AndProx
 * Harding, Cory. "ESP-RFID-Tool." March 2018, GitHub, https://github.com/rfidtool/ESP-RFID-Tool
-* Hughes, Nathan. "Flipper Maker" May 2022, https://flippermaker.github.io  ​
-* Kelly, Mike. “Wiegotcha – RFID Thief” January 2017, https://exfil.co/2017/01/17/wiegotcha-rfid-thief/                     
+* Hughes, Nathan. "Flipper Maker" May 2022, https://flippermaker.github.io  
+* Kelly, Mike. "Wiegotcha – RFID Thief." January 2017, https://exfil.co/2017/01/17/wiegotcha-rfid-thief/ 
+* Phrack. “Flipper Zero RFID Thief” https://www.phrack.me/hardware/2025/02/26/Flipper-Zero-RFIDThief.html 
 * Rumble, Rich. "RFID Sniffing Under Your Nose and in Your Face." DerbyCon IX, September 2019, https://www.youtube.com/watch?v=y37j6RDtybQ
 * W., Viktor. "Enclosure For Proxmark3 Easy." Thingiverse, September 2018, https://www.thingiverse.com/thing:3123482
 * White, Brent and Tim Roberts. "Breaking Into Your Building: A Hacker's Guide to Unauthorized Access." NolaCon 2019, May 2019, https://www.youtube.com/watch?v=eft8PElmQZM 
