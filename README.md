@@ -185,12 +185,12 @@ Go check out the new FlipperHIDecoder.py script in order to shortcut the process
 * python3 FlipperHIDecoder.py -pm3 2004440A73 
 <img width="1132" height="761" alt="defconSingle" src="https://github.com/user-attachments/assets/98518657-6319-4814-9627-0bcc3880e0b3" />
 
-### OR convert the entire loot file from the ESP RFID Tool! 
-### Step 3 - Save your Card Data to the Flipper Zero
+### OR convert the entire loot file from the ESP RFID Tool!
 * python3 FlipperHIDecoder.py -l log.txt
 <img width="1132" height="761" alt="defconBatch" src="https://github.com/user-attachments/assets/18673c96-1f89-4f20-bd6d-f7b2a6ef5af8" />
- 
 
+### Step 3 - Save your Card Data to the Flipper Zero
+ 
 On your Flipper, **hit the center button** and navigate to > **125 hHz RFID** > **Add Manually**
 ![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/eff63263-fe18-485b-a2b1-a9dfd9aae3d1)
 
