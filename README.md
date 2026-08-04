@@ -4,13 +4,16 @@ Traditional RFID badge cloning methods require you to be within 3 feet of your t
 
 <img src="https://user-images.githubusercontent.com/104524120/183311963-9f5dcf63-abc1-46a2-9d27-cc1c80772709.png" width=50% height=50%> 
 
-This is part of an original full paper and talk given during **DEFCON 30** in the Physical Bypass Village **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (https://www.youtube.com/watch?v=OLLaXOcuYfw). Each year (DEFCON 31, 32 and 33), the content is reiterated and improved upon, staying up on the latest techniques and gadgets to use in the field. The goal is to conduct a physical pen test without the need for a laptop, only a mobile phone and implant devices!
+This is part of an original full paper and talk given during **DEFCON 30** in the Physical Bypass Village **Keeping Your Distance: Pwning RFID Physical Access Controls From 6FT and Beyond** by myself and Twitter: @_badcharacters (https://www.youtube.com/watch?v=OLLaXOcuYfw). Each year (DEFCON 31, 32 and 33, 34), the content is reiterated and improved upon, staying up on the latest techniques and gadgets to use in the field. The goal is to conduct a physical pen test without the need for a laptop, only a mobile phone and implant devices!
 
 
 
-The content has been updated for **DEFCON 33** titled: **Flipping Locks: Remote Badge Cloning with the Flipper Zero and More**. In this tutorial, you'll learn how to clone the badge loot from your RFID Gooseneck reader quickly and easily!
+The content has been updated for **DEFCON 34** titled: **Clone to Pwn - Remote Badge Cloning with the Flipper Zero**. In this tutorial, you'll learn how to clone the badge loot from your RFID Gooseneck reader quickly and easily!
 
-<img width=20% height=20% alt="image" src="https://github.com/user-attachments/assets/8ac8bc0b-6389-4662-ad1e-db043406d98c" />
+<img width="242" height="203" alt="DC34_icon" src="https://github.com/user-attachments/assets/92f42562-e62a-47f4-8821-887934bcfbda" />
+
+
+
 
 #### NOTE: iCLASS SE/SEOS Downgrade Attack and Legacy Attack Methods are updated in the latest slide deck from DEF CON 33 (2025) - download the .pdf to review the attack methods.
 
@@ -162,7 +165,7 @@ It's not as crazy as you think, here's the breakdown of what the binary code mea
 <img width=70% height=70% alt="image" src="https://github.com/user-attachments/assets/015e5edc-cfad-42e9-a304-2f75f65fdd03" />
 Source:  https://accessgrid.com/guides/access-control-protocols/examples-of-every-access-control-bit-format 
 
-### Step 2 - Copy the 2nd half of the Binary Payload and Convert to HEX
+### Step 2A - Manually Copy the 2nd half of the Binary Payload and Convert to Flipper HEX
 The "HEX" in the loot file was designed for a Proxmark 3 device. The Flipper Zero takes a different type of hex code so here's how you get your payload to clone your card. 
 
 <img width=70% height=70% alt="image" src="https://github.com/user-attachments/assets/5565aa65-4b93-4744-8b95-2fa29dea3a33" />
@@ -177,8 +180,16 @@ REMOVE the leading and trailing parity bits:
 Copy this and convert it into HEX using a Bin-HEX Converter ​on your phone and poof! You have the 6 digit hex code for your Flipper!
 * 001000010000010100111001 = 21 05 39​
 
+### Step 2B - Automate Conversion with FlipperHIDecoder.py using the raw PM3 HEX
+Go check out the new FlipperHIDecoder.py script in order to shortcut the process! https://github.com/sh0ckSec/FlipperHIDecoder
+* python3 FlipperHIDecoder.py -pm3 2004440A73 
+<img width="1132" height="761" alt="defconSingle" src="https://github.com/user-attachments/assets/98518657-6319-4814-9627-0bcc3880e0b3" />
 
+### OR convert the entire loot file from the ESP RFID Tool! 
 ### Step 3 - Save your Card Data to the Flipper Zero
+* python3 FlipperHIDecoder.py -l log.txt
+<img width="1132" height="761" alt="defconBatch" src="https://github.com/user-attachments/assets/18673c96-1f89-4f20-bd6d-f7b2a6ef5af8" />
+ 
 
 On your Flipper, **hit the center button** and navigate to > **125 hHz RFID** > **Add Manually**
 ![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/eff63263-fe18-485b-a2b1-a9dfd9aae3d1)
@@ -207,12 +218,15 @@ In a few seconds...
 
 
 Boom! Happy Hunting! 
+
+<img width="242" height="203" alt="DC34_icon" src="https://github.com/user-attachments/assets/92f42562-e62a-47f4-8821-887934bcfbda" />
 <p float="left">
           <img src="https://github.com/user-attachments/assets/45b9e293-9ed4-4293-987f-37d882e52a54" width=20% height=20%>
           
 ![DC32](https://github.com/user-attachments/assets/8d56f4a6-3123-49d1-a24a-8314c1fa08e6)
 
 ![image](https://github.com/sh0ckSec/RFID-Gooseneck/assets/104524120/10bd4244-0146-4b59-b3f5-c6722533796d) 
+![D3FC0N](https://user-images.githubusercontent.com/104524120/183314908-3d3c6d66-29b2-4ba0-84ae-932c3c2ca782.PNG) 
 
 </p>
 
@@ -278,8 +292,6 @@ Verify your card data:
 
 
 Boom! Happy Hunting!
-
-![D3FC0N](https://user-images.githubusercontent.com/104524120/183314908-3d3c6d66-29b2-4ba0-84ae-932c3c2ca782.PNG) 
 
 Special Shoutouts to the Bill Graydon, Terry, Karen and the team of the Physical Security Village and Zero_Chaos of the Radio Frequency Village for hosting us at DEFCON!
 
