@@ -295,8 +295,6 @@ Boom! Happy Hunting!
 
 Special Shoutouts to the Bill Graydon, Terry, Karen and the team of the Physical Security Village and Zero_Chaos of the Radio Frequency Village for hosting us at DEFCON!
 
-<a href="https://www.buymeacoffee.com/sh0cksec" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
 # References
 
 * Bunsen, Auston. "Examples of every access control bit format." February 2025, https://accessgrid.com/guides/access-control-protocols/examples-of-every-access-control-bit-format 
